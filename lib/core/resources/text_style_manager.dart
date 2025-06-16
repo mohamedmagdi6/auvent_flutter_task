@@ -19,4 +19,20 @@ class TextStyles {
       color: ColorsManager.whiteColor,
     );
   }
+
+  static textstyleS28W500Black() {
+    return GoogleFonts.rubik(
+      fontSize: 28,
+      fontWeight: FontWeight.w500,
+      color: ColorsManager.blackColor,
+    );
+  }
+
+  static textstyleS28W400Grey() {
+    return GoogleFonts.rubik(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      color: ColorsManager.lightGray,
+    );
+  }
 }
