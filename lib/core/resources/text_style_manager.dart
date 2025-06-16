@@ -20,6 +20,14 @@ class TextStyles {
     );
   }
 
+  static textstyleS14W700Black() {
+    return GoogleFonts.rubik(
+      fontSize: 14,
+      fontWeight: FontWeight.w700,
+      color: ColorsManager.blackColor,
+    );
+  }
+
   static textstyleS18W500White() {
     return GoogleFonts.rubik(
       fontSize: 18,
@@ -73,6 +81,14 @@ class TextStyles {
       fontSize: 14,
       fontWeight: FontWeight.w400,
       color: ColorsManager.blackColor,
+    );
+  }
+
+  static textstyleS12W500LightGreykDmSans() {
+    return GoogleFonts.dmSans(
+      fontSize: 12,
+      fontWeight: FontWeight.w500,
+      color: ColorsManager.lightGray,
     );
   }
 

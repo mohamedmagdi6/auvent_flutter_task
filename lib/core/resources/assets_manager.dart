@@ -9,6 +9,8 @@ abstract class ImageAssets {
   static const String burger = "$imagePath/burger.png";
   static const String groceries = "$imagePath/groceries.png";
   static const String health = "$imagePath/health.png";
+  static const String nawelsLetter = "$imagePath/nawel_letter.png";
+  static const String securityVault = "$imagePath/Security Vault.png";
 }
 
 // icons assets path

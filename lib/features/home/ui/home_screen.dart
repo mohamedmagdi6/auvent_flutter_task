@@ -1,6 +1,7 @@
 import 'package:auvent_flutter_task/core/helpers/spacing.dart';
 import 'package:auvent_flutter_task/core/resources/assets_manager.dart';
 import 'package:auvent_flutter_task/core/resources/text_style_manager.dart';
+import 'package:auvent_flutter_task/features/home/ui/widgets/got_code_card.dart';
 import 'package:auvent_flutter_task/features/home/ui/widgets/header_section.dart';
 import 'package:auvent_flutter_task/features/home/ui/widgets/service_item.dart';
 import 'package:flutter/material.dart';
@@ -54,32 +55,10 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
 
-                  const SizedBox(height: 24),
+                  verticalSpace(16.h),
 
                   // Code card
-                  Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Row(
-                      children: const [
-                        Icon(
-                          Icons.confirmation_number,
-                          size: 40,
-                          color: Colors.deepPurple,
-                        ),
-                        SizedBox(width: 16),
-                        Expanded(
-                          child: Text(
-                            'Got a code !\nAdd your code and save on your order',
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  GotCodeCard(),
 
                   const SizedBox(height: 24),
 
