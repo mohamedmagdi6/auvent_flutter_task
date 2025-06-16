@@ -5,10 +5,10 @@ import 'package:auvent_flutter_task/core/resources/color_manager.dart';
 import 'package:auvent_flutter_task/core/resources/text_style_manager.dart';
 import 'package:auvent_flutter_task/core/routing/routes.dart';
 import 'package:auvent_flutter_task/core/widgets/app_button.dart';
-import 'package:auvent_flutter_task/core/widgets/app_text_form_field.dart';
+import 'package:auvent_flutter_task/features/auth/widgets/auth_email_text_field.dart';
+import 'package:auvent_flutter_task/features/auth/widgets/auth_password_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -37,28 +37,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 key: formKey,
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: AppTextFormField(
-                        hintText: 'Email',
-                        prefixIcon: Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: SvgPicture.asset(IconsAssets.mailIcon),
-                        ),
-                      ),
-                    ),
+                    AuthEmailTextField(),
                     verticalSpace(18.h),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: AppTextFormField(
-                        hintText: 'Password',
-                        isObscureText: isObscureText,
-                        prefixIcon: Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: SvgPicture.asset(IconsAssets.passwordIcon),
-                        ),
-                      ),
-                    ),
+                    AuthPasswordTextField(isObscureText: isObscureText),
 
                     verticalSpace(40.h),
                     AppButton(
