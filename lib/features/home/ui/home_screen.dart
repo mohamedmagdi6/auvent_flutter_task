@@ -1,6 +1,7 @@
 import 'package:auvent_flutter_task/core/helpers/spacing.dart';
 import 'package:auvent_flutter_task/core/resources/assets_manager.dart';
 import 'package:auvent_flutter_task/core/resources/text_style_manager.dart';
+import 'package:auvent_flutter_task/features/home/ui/widgets/carousel_with_indicator.dart';
 import 'package:auvent_flutter_task/features/home/ui/widgets/got_code_card.dart';
 import 'package:auvent_flutter_task/features/home/ui/widgets/header_section.dart';
 import 'package:auvent_flutter_task/features/home/ui/widgets/service_item.dart';
@@ -68,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                     'Shortcuts:',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 12),
+                  verticalSpace(12.h),
 
                   // Shortcuts row
                   Row(
@@ -99,6 +100,15 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   verticalSpace(16.h),
+                  CarouselWithIndicator(
+                    carouselImages: [
+                      ImageAssets.bannerImage,
+                      ImageAssets.bannerImage,
+                      ImageAssets.bannerImage,
+                      ImageAssets.bannerImage,
+                      ImageAssets.bannerImage,
+                    ],
+                  ),
                 ],
               ),
             ),
