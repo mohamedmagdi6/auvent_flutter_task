@@ -4,6 +4,7 @@ import 'package:auvent_flutter_task/core/resources/text_style_manager.dart';
 import 'package:auvent_flutter_task/features/home/ui/widgets/carousel_with_indicator.dart';
 import 'package:auvent_flutter_task/features/home/ui/widgets/got_code_card.dart';
 import 'package:auvent_flutter_task/features/home/ui/widgets/header_section.dart';
+import 'package:auvent_flutter_task/features/home/ui/widgets/popular_restaurants_section.dart';
 import 'package:auvent_flutter_task/features/home/ui/widgets/service_item.dart';
 import 'package:auvent_flutter_task/features/home/ui/widgets/shortcuts_item.dart';
 import 'package:flutter/material.dart';
@@ -109,11 +110,34 @@ class HomeScreen extends StatelessWidget {
                       ImageAssets.bannerImage,
                     ],
                   ),
+                  verticalSpace(16.h),
+                  PopularRestaurantsSection(),
                 ],
               ),
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        selectedItemColor: Colors.purple,
+        unselectedItemColor: Colors.grey,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.location_on), label: 'Home'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.grid_view),
+            label: 'Categories',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.local_shipping),
+            label: 'Deliver',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'Cart',
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        ],
       ),
     );
   }
