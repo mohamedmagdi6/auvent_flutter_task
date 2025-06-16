@@ -43,7 +43,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 32.0),
             child: Text(
               onboardingSubtitles[currentIndex],
-              style: TextStyles.textstyleS28W400Grey(),
+              style: TextStyles.textstyleS14W400Grey(),
               textAlign: TextAlign.center,
             ),
           ),
@@ -65,7 +65,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           (currentIndex + 1) % onboardingTitles.length;
                     });
                   },
-            child: Text('Next', style: TextStyles.textstyleS28W400Grey()),
+            child: Text('Next', style: TextStyles.textstyleS14W400Grey()),
           ),
           verticalSpace(40.h),
         ],

@@ -53,7 +53,15 @@ class AppTextFormField extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(16.0),
             ),
-        hintStyle: hintStyle ?? TextStyles.textstyleS28W400GreyMulish(),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: ColorsManager.orangeColor, width: 1.3),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: ColorsManager.orangeColor, width: 1.3),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        hintStyle: hintStyle ?? TextStyles.textstyleS14W400GreyMulish(),
         hintText: hintText,
         suffixIcon: suffixIcon,
         fillColor: backgroundColor ?? ColorsManager.lightGray.withAlpha(50),
@@ -65,7 +73,13 @@ class AppTextFormField extends StatelessWidget {
         ),
       ),
       obscureText: isObscureText ?? false,
-      style: TextStyles.textstyleS24W700Black(),
+      style: TextStyles.textstyleS14W400GreyDmSans(),
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'This field cannot be empty';
+        }
+        return null;
+      },
     );
   }
 }

@@ -44,7 +44,12 @@ class _SignupScreenState extends State<SignupScreen> {
                     verticalSpace(20.h),
                     AppButton(
                       text: 'Sign Up',
-                      onPressed: () {},
+                      onPressed: () {
+                        if (formKey.currentState?.validate() ?? false) {
+                          // Handle sign up logic here
+                          context.pushNamedAndRemoveUntil(Routes.home);
+                        }
+                      },
                       horizontalPadding: 0,
                     ),
                     verticalSpace(16.h),
@@ -54,7 +59,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       },
                       child: Text(
                         'already have an account?',
-                        style: TextStyles.textstyleS28W400GreyDmSans(),
+                        style: TextStyles.textstyleS16W700GreyDmSans(),
                       ),
                     ),
                   ],

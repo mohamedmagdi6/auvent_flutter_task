@@ -28,7 +28,7 @@ class TextStyles {
     );
   }
 
-  static textstyleS28W400Grey() {
+  static textstyleS14W400Grey() {
     return GoogleFonts.rubik(
       fontSize: 14,
       fontWeight: FontWeight.w400,
@@ -36,7 +36,7 @@ class TextStyles {
     );
   }
 
-  static textstyleS28W400GreyMulish() {
+  static textstyleS14W400GreyMulish() {
     return GoogleFonts.mulish(
       fontSize: 14,
       fontWeight: FontWeight.w400,
@@ -44,11 +44,19 @@ class TextStyles {
     );
   }
 
-  static textstyleS28W400GreyDmSans() {
+  static textstyleS16W700GreyDmSans() {
     return GoogleFonts.dmSans(
       fontSize: 16,
       fontWeight: FontWeight.w700,
       color: ColorsManager.blueColor,
+    );
+  }
+
+  static textstyleS14W400GreyDmSans() {
+    return GoogleFonts.dmSans(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      color: ColorsManager.blackColor,
     );
   }
 }

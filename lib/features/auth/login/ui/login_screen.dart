@@ -42,7 +42,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     verticalSpace(20.h),
                     AppButton(
                       text: 'Login',
-                      onPressed: () {},
+                      onPressed: () {
+                        if (formKey.currentState?.validate() ?? false) {
+                          // Handle login logic here
+                          context.pushNamedAndRemoveUntil(Routes.home);
+                        }
+                      },
                       horizontalPadding: 0,
                     ),
                     verticalSpace(16.h),
@@ -52,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                       child: Text(
                         'create an account',
-                        style: TextStyles.textstyleS28W400GreyDmSans(),
+                        style: TextStyles.textstyleS16W700GreyDmSans(),
                       ),
                     ),
                   ],
