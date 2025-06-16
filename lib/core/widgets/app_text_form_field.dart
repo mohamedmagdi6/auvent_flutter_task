@@ -14,6 +14,7 @@ class AppTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final Color? backgroundColor;
+  final FormFieldValidator<String>? validator;
   const AppTextFormField({
     super.key,
     this.contentPadding,
@@ -26,6 +27,7 @@ class AppTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.backgroundColor,
     this.prefixIcon,
+    this.validator,
   });
 
   @override
@@ -74,12 +76,14 @@ class AppTextFormField extends StatelessWidget {
       ),
       obscureText: isObscureText ?? false,
       style: TextStyles.textstyleS14W400GreyDmSans(),
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'This field cannot be empty';
-        }
-        return null;
-      },
+      validator:
+          validator ??
+          (value) {
+            if (value == null || value.isEmpty) {
+              return 'This field cannot be empty';
+            }
+            return null;
+          },
     );
   }
 }
