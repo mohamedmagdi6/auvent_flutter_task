@@ -26,7 +26,7 @@ class AppButton extends StatelessWidget {
       child: ElevatedButton.icon(
         onPressed: onPressed,
         iconAlignment: IconAlignment.end,
-        icon: withIcon ? Image.asset(IconsAssets.arrowforward) : null,
+        icon: withIcon ? Image.asset(IconsAssets.superSaverIcon) : null,
         label: Text(text, style: TextStyles.textstyleS18W500White()),
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),

@@ -47,7 +47,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
           child: DropdownButton<String>(
             value: _selectedItem,
             icon: Image.asset(
-              IconsAssets.arrowDown,
+              IconsAssets.superSaverIcon,
               color: ColorsManager.primaryColor,
             ),
             style: TextStyle(

@@ -17,17 +17,9 @@ abstract class ImageAssets {
 abstract class IconsAssets {
   static const String mailIcon = "$iconsPath/ic_outline-mail.svg";
   static const String passwordIcon = "$iconsPath/mdi_password-outline.svg";
-  static const String account = "$iconsPath/account.png";
-  static const String addImg = "$iconsPath/Add-img.png";
-  static const String arrowBack = "$iconsPath/Arrow - back.png";
-  static const String arrowDown = "$iconsPath/Arrow - Down 2.png";
-  static const String arrowforward = "$iconsPath/Arrow - Left.png";
-  static const String calendar = "$iconsPath/calendar.png";
-  static const String copy = "$iconsPath/copy.png";
-  static const String flag = "$iconsPath/Flag.png";
-  static const String list = "$iconsPath/List.png";
-  static const String logOut = "$iconsPath/log-out.png";
-  static const String passwordEye = "$iconsPath/password-eye.png";
-  static const String plus = "$iconsPath/plus.png";
-  static const String qr = "$iconsPath/QR.png";
+  static const String bestSellerIcon = "$iconsPath/best seller.svg";
+  static const String giveBackIcon = "$iconsPath/give back.svg";
+  static const String mustTriesIcon = "$iconsPath/must tries.svg";
+  static const String pastOrdersIcon = "$iconsPath/past order.svg";
+  static const String superSaverIcon = "$iconsPath/super saver.svg";
 }

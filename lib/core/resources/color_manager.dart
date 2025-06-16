@@ -9,7 +9,7 @@ abstract class ColorsManager {
   static Color blackColor = Colors.black;
   static Color whiteColor = Colors.white;
   static Color transparentColor = Colors.transparent;
-  static Color textGreyColor = const Color(0xFF6E6A7C);
+  static Color lightOrangeColor = const Color(0xFFFFEEE6);
   static Color textHintGreyColor = const Color(0xFFBABABA);
   static const Color darkBlue = Color(0xFF242424);
   static const Color gray = Color(0xFF757575);

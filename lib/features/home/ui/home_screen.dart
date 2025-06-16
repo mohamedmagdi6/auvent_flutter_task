@@ -4,6 +4,7 @@ import 'package:auvent_flutter_task/core/resources/text_style_manager.dart';
 import 'package:auvent_flutter_task/features/home/ui/widgets/got_code_card.dart';
 import 'package:auvent_flutter_task/features/home/ui/widgets/header_section.dart';
 import 'package:auvent_flutter_task/features/home/ui/widgets/service_item.dart';
+import 'package:auvent_flutter_task/features/home/ui/widgets/shortcuts_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -70,15 +71,30 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: 12),
 
                   // Shortcuts row
-                  Wrap(
-                    spacing: 12,
-                    runSpacing: 12,
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 8.w,
                     children: [
-                      shortcutItem(Icons.receipt_long, 'Past\norders'),
-                      shortcutItem(Icons.percent, 'Super\nSaver'),
-                      shortcutItem(Icons.thumb_up, 'Must-tries'),
-                      shortcutItem(Icons.volunteer_activism, 'Give Back'),
-                      shortcutItem(Icons.star, 'Best Sellers'),
+                      ShortcutsItem(
+                        imageUrl: IconsAssets.pastOrdersIcon,
+                        title: 'Past\norders',
+                      ),
+                      ShortcutsItem(
+                        imageUrl: IconsAssets.superSaverIcon,
+                        title: 'Super\nSaver',
+                      ),
+                      ShortcutsItem(
+                        imageUrl: IconsAssets.mustTriesIcon,
+                        title: 'Must-tries',
+                      ),
+                      ShortcutsItem(
+                        imageUrl: IconsAssets.giveBackIcon,
+                        title: 'Give Back',
+                      ),
+                      ShortcutsItem(
+                        imageUrl: IconsAssets.bestSellerIcon,
+                        title: 'Best Sellers',
+                      ),
                     ],
                   ),
 
