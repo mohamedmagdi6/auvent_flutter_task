@@ -20,6 +20,14 @@ class TextStyles {
     );
   }
 
+  static textstyleS28W700White() {
+    return GoogleFonts.rubik(
+      fontSize: 28,
+      fontWeight: FontWeight.w700,
+      color: ColorsManager.whiteColor,
+    );
+  }
+
   static textstyleS28W500Black() {
     return GoogleFonts.rubik(
       fontSize: 28,
@@ -52,10 +60,26 @@ class TextStyles {
     );
   }
 
-  static textstyleS14W400GreyDmSans() {
+  static textstyleS14W400BlackDmSans() {
     return GoogleFonts.dmSans(
       fontSize: 14,
       fontWeight: FontWeight.w400,
+      color: ColorsManager.blackColor,
+    );
+  }
+
+  static textstyleS12W700BlackDmSans() {
+    return GoogleFonts.dmSans(
+      fontSize: 12,
+      fontWeight: FontWeight.w700,
+      color: ColorsManager.blackColor,
+    );
+  }
+
+  static textstyleS18W700BlackDmSans() {
+    return GoogleFonts.dmSans(
+      fontSize: 18,
+      fontWeight: FontWeight.w700,
       color: ColorsManager.blackColor,
     );
   }

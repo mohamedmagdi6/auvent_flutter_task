@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 abstract class ColorsManager {
   static Color primaryColor = const Color(0xFF8900FE);
+  static Color burpleColor = const Color(0xFFC673A8);
   static Color orangeColor = const Color(0xFFFF7D53);
+  static Color yellowColor = const Color(0xFFFFDE59);
   static Color blueColor = const Color(0xFF1877F2);
   static Color blackColor = Colors.black;
   static Color whiteColor = Colors.white;
