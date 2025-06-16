@@ -1,5 +1,7 @@
+import 'package:auvent_flutter_task/core/helpers/extensions.dart';
 import 'package:auvent_flutter_task/core/helpers/spacing.dart';
 import 'package:auvent_flutter_task/core/resources/text_style_manager.dart';
+import 'package:auvent_flutter_task/core/routing/routes.dart';
 import 'package:auvent_flutter_task/core/widgets/app_button.dart';
 import 'package:auvent_flutter_task/features/onboarding/widgets/stack_of_onboarding_screen.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +48,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
           Spacer(),
-          AppButton(text: 'Get Started'),
+          AppButton(
+            text: 'Get Started',
+            onPressed: () {
+              context.pushNamed(Routes.logingRoute);
+            },
+          ),
           verticalSpace(12.h),
           TextButton(
             onPressed: currentIndex == onboardingTitles.length - 1
