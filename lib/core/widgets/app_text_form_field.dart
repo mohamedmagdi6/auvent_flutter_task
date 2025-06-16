@@ -37,8 +37,8 @@ class AppTextFormField extends StatelessWidget {
         focusedBorder:
             focusedBorder ??
             OutlineInputBorder(
-              borderSide: const BorderSide(
-                color: ColorsManager.mainBlue,
+              borderSide: BorderSide(
+                color: ColorsManager.primaryColor,
                 width: 1.3,
               ),
               borderRadius: BorderRadius.circular(16.0),
@@ -52,14 +52,14 @@ class AppTextFormField extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(16.0),
             ),
-        hintStyle: hintStyle ?? TextStyles.font14LightGrayRegular,
+        hintStyle: hintStyle ?? TextStyles.textstyleS24W700Black(),
         hintText: hintText,
         suffixIcon: suffixIcon,
         fillColor: backgroundColor ?? ColorsManager.moreLightGray,
         filled: true,
       ),
       obscureText: isObscureText ?? false,
-      style: TextStyles.font14DarkBlueMedium,
+      style: TextStyles.textstyleS24W700Black(),
     );
   }
 }

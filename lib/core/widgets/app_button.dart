@@ -22,11 +22,9 @@ class AppButton extends StatelessWidget {
         },
         iconAlignment: IconAlignment.end,
         icon: withIcon ? Image.asset(IconsAssets.arrowforward) : null,
-        label: Text(text, style: TextStyles.textstyleS16W600White()),
+        label: Text(text, style: TextStyles.textstyleS18W500White()),
         style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-          ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           backgroundColor: ColorsManager.primaryColor,
         ),
       ),

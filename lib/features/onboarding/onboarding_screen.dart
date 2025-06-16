@@ -32,7 +32,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           SizedBox(height: 15.h),
           Text(
             onboardingSubtitles[currentIndex],
-            style: TextStyles.textstyleS10W400Grey(),
+            style: TextStyles.textstyleS24W700Black(),
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 30.h),
@@ -45,7 +45,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 currentIndex = (currentIndex + 1) % onboardingTitles.length;
               });
             },
-            child: Text('Next', style: TextStyles.textstyleS10W400Grey()),
+            child: Text('Next', style: TextStyles.textstyleS24W700Black()),
           ),
         ],
       ),

@@ -28,11 +28,11 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Welcome Back', style: TextStyles.font24BlueBold),
+                Text('Welcome Back', style: TextStyles.textstyleS24W700Black()),
                 verticalSpace(8),
                 Text(
                   'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
-                  style: TextStyles.font14GrayRegular,
+                  style: TextStyles.textstyleS24W700Black(),
                 ),
                 verticalSpace(36),
                 Form(
@@ -62,13 +62,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         alignment: AlignmentDirectional.centerEnd,
                         child: Text(
                           'Forgot Password?',
-                          style: TextStyles.font13BlueRegular,
+                          style: TextStyles.textstyleS24W700Black(),
                         ),
                       ),
                       verticalSpace(40),
                       AppTextButton(
                         buttonText: "Login",
-                        textStyle: TextStyles.font16WhiteSemiBold,
+                        textStyle: TextStyles.textstyleS24W700Black(),
                         onPressed: () {},
                       ),
                       verticalSpace(16),
