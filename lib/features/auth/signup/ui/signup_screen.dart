@@ -10,14 +10,14 @@ import 'package:auvent_flutter_task/features/auth/widgets/auth_password_text_fie
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
   final formKey = GlobalKey<FormState>();
   bool isObscureText = true;
 
@@ -39,19 +39,21 @@ class _LoginScreenState extends State<LoginScreen> {
                     AuthEmailTextField(),
                     verticalSpace(10.h),
                     AuthPasswordTextField(isObscureText: isObscureText),
+                    verticalSpace(10.h),
+                    AuthPasswordTextField(isObscureText: isObscureText),
                     verticalSpace(20.h),
                     AppButton(
-                      text: 'Login',
+                      text: 'Sign Up',
                       onPressed: () {},
                       horizontalPadding: 0,
                     ),
                     verticalSpace(16.h),
                     TextButton(
                       onPressed: () {
-                        context.pushNamedAndRemoveUntil(Routes.signUpRoute);
+                        context.pushNamedAndRemoveUntil(Routes.logingRoute);
                       },
                       child: Text(
-                        'create an account',
+                        'already have an account?',
                         style: TextStyles.textstyleS28W400GreyDmSans(),
                       ),
                     ),
