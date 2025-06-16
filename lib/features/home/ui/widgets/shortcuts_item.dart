@@ -25,7 +25,11 @@ class ShortcutsItem extends StatelessWidget {
             child: SvgPicture.asset(imageUrl, width: 32.w, height: 32),
           ),
           verticalSpace(8.h),
-          Text(title, style: TextStyles.textstyleS12W700BlackDmSans()),
+          Text(
+            title,
+            style: TextStyles.textstyleS12W700BlackDmSans(),
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );

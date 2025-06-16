@@ -98,67 +98,12 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
 
-                  const SizedBox(height: 24),
-
-                  // Promo image
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Image.network(
-                      'https://i.imgur.com/IgG7zEQ.png', // Use your actual image URL here
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-
-                  const SizedBox(height: 12),
-                  Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        buildDot(true),
-                        buildDot(false),
-                        buildDot(false),
-                      ],
-                    ),
-                  ),
+                  verticalSpace(16.h),
                 ],
               ),
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget shortcutItem(IconData icon, String label) {
-    return Container(
-      width: 72,
-      padding: const EdgeInsets.symmetric(vertical: 12),
-      decoration: BoxDecoration(
-        color: Colors.pink[50],
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        children: [
-          Icon(icon, color: Colors.deepPurple),
-          const SizedBox(height: 4),
-          Text(
-            label,
-            style: const TextStyle(fontSize: 12),
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget buildDot(bool active) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 4),
-      width: 8,
-      height: 8,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: active ? Colors.purple : Colors.grey,
       ),
     );
   }
