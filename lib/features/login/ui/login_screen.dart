@@ -1,11 +1,14 @@
+import 'package:auvent_flutter_task/core/helpers/extensions.dart';
 import 'package:auvent_flutter_task/core/helpers/spacing.dart';
+import 'package:auvent_flutter_task/core/resources/assets_manager.dart';
+import 'package:auvent_flutter_task/core/resources/color_manager.dart';
 import 'package:auvent_flutter_task/core/resources/text_style_manager.dart';
-import 'package:auvent_flutter_task/core/widgets/app_text_button.dart';
+import 'package:auvent_flutter_task/core/routing/routes.dart';
+import 'package:auvent_flutter_task/core/widgets/app_button.dart';
 import 'package:auvent_flutter_task/core/widgets/app_text_form_field.dart';
-import 'package:auvent_flutter_task/features/login/ui/widgets/already_have_account_text.dart';
-import 'package:auvent_flutter_task/features/login/ui/widgets/terms_and_conditions_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -21,65 +24,62 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Welcome Back', style: TextStyles.textstyleS24W700Black()),
-                verticalSpace(8),
-                Text(
-                  'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
-                  style: TextStyles.textstyleS24W700Black(),
-                ),
-                verticalSpace(36),
-                Form(
-                  key: formKey,
-                  child: Column(
-                    children: [
-                      const AppTextFormField(hintText: 'Email'),
-                      verticalSpace(18),
-                      AppTextFormField(
+      backgroundColor: ColorsManager.whiteColor,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image(image: const AssetImage(ImageAssets.appLogo)),
+              verticalSpace(24.h),
+              Form(
+                key: formKey,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: AppTextFormField(
+                        hintText: 'Email',
+                        prefixIcon: Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: SvgPicture.asset(IconsAssets.mailIcon),
+                        ),
+                      ),
+                    ),
+                    verticalSpace(18.h),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: AppTextFormField(
                         hintText: 'Password',
                         isObscureText: isObscureText,
-                        suffixIcon: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              isObscureText = !isObscureText;
-                            });
-                          },
-                          child: Icon(
-                            isObscureText
-                                ? Icons.visibility_off
-                                : Icons.visibility,
-                          ),
+                        prefixIcon: Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: SvgPicture.asset(IconsAssets.passwordIcon),
                         ),
                       ),
-                      verticalSpace(24),
-                      Align(
-                        alignment: AlignmentDirectional.centerEnd,
-                        child: Text(
-                          'Forgot Password?',
-                          style: TextStyles.textstyleS24W700Black(),
-                        ),
+                    ),
+
+                    verticalSpace(40.h),
+                    AppButton(
+                      text: 'Login',
+                      onPressed: () {},
+                      horizontalPadding: 0,
+                    ),
+                    verticalSpace(16.h),
+                    TextButton(
+                      onPressed: () {
+                        context.pushNamed(Routes.signUpRoute);
+                      },
+                      child: Text(
+                        'create an account',
+                        style: TextStyles.textstyleS28W400GreyDmSans(),
                       ),
-                      verticalSpace(40),
-                      AppTextButton(
-                        buttonText: "Login",
-                        textStyle: TextStyles.textstyleS24W700Black(),
-                        onPressed: () {},
-                      ),
-                      verticalSpace(16),
-                      const TermsAndConditionsText(),
-                      verticalSpace(60),
-                      const AlreadyHaveAccountText(),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

@@ -3,7 +3,7 @@ import 'package:auvent_flutter_task/core/helpers/spacing.dart';
 import 'package:auvent_flutter_task/core/resources/text_style_manager.dart';
 import 'package:auvent_flutter_task/core/routing/routes.dart';
 import 'package:auvent_flutter_task/core/widgets/app_button.dart';
-import 'package:auvent_flutter_task/features/onboarding/widgets/stack_of_onboarding_screen.dart';
+import 'package:auvent_flutter_task/features/onboarding/widgets/onboarding_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

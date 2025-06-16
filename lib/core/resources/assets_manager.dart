@@ -3,13 +3,15 @@ const String iconsPath = "assets/icons";
 
 // assets/images/splash_screen.png
 abstract class ImageAssets {
-  static const String logo = "$imagePath/nawel.png";
+  static const String splashLogo = "$imagePath/nawel.png";
   static const String onboarding = "$imagePath/on_boarding.png";
+  static const String appLogo = "$imagePath/nawel_logo.png";
 }
 
 // icons assets path
 abstract class IconsAssets {
-  static const String logo = "$iconsPath/Logo.png";
+  static const String mailIcon = "$iconsPath/ic_outline-mail.svg";
+  static const String passwordIcon = "$iconsPath/mdi_password-outline.svg";
   static const String account = "$iconsPath/account.png";
   static const String addImg = "$iconsPath/Add-img.png";
   static const String arrowBack = "$iconsPath/Arrow - back.png";

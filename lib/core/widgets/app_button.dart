@@ -8,17 +8,19 @@ class AppButton extends StatelessWidget {
   final String text;
   final bool withIcon;
   final void Function()? onPressed;
+  final double? horizontalPadding;
   const AppButton({
     super.key,
     required this.text,
     this.withIcon = false,
     required this.onPressed,
+    this.horizontalPadding,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 32.w),
+      padding: EdgeInsets.symmetric(horizontal: horizontalPadding ?? 32.w),
       height: 52,
       width: double.infinity,
       child: ElevatedButton.icon(

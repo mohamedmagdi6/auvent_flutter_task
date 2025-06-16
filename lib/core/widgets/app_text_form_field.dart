@@ -12,6 +12,7 @@ class AppTextFormField extends StatelessWidget {
   final String hintText;
   final bool? isObscureText;
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final Color? backgroundColor;
   const AppTextFormField({
     super.key,
@@ -24,6 +25,7 @@ class AppTextFormField extends StatelessWidget {
     this.isObscureText,
     this.suffixIcon,
     this.backgroundColor,
+    this.prefixIcon,
   });
 
   @override
@@ -33,30 +35,34 @@ class AppTextFormField extends StatelessWidget {
         isDense: true,
         contentPadding:
             contentPadding ??
-            EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
+            EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
         focusedBorder:
             focusedBorder ??
             OutlineInputBorder(
               borderSide: BorderSide(
-                color: ColorsManager.primaryColor,
-                width: 1.3,
+                color: ColorsManager.lightGray.withAlpha(20),
               ),
               borderRadius: BorderRadius.circular(16.0),
             ),
         enabledBorder:
             enabledBorder ??
             OutlineInputBorder(
-              borderSide: const BorderSide(
-                color: ColorsManager.lighterGray,
+              borderSide: BorderSide(
+                color: ColorsManager.lighterGray.withAlpha(20),
                 width: 1.3,
               ),
               borderRadius: BorderRadius.circular(16.0),
             ),
-        hintStyle: hintStyle ?? TextStyles.textstyleS24W700Black(),
+        hintStyle: hintStyle ?? TextStyles.textstyleS28W400GreyMulish(),
         hintText: hintText,
         suffixIcon: suffixIcon,
-        fillColor: backgroundColor ?? ColorsManager.moreLightGray,
+        fillColor: backgroundColor ?? ColorsManager.lightGray.withAlpha(50),
         filled: true,
+        prefixIcon: prefixIcon,
+        prefixIconConstraints: const BoxConstraints(
+          minWidth: 40,
+          minHeight: 40,
+        ),
       ),
       obscureText: isObscureText ?? false,
       style: TextStyles.textstyleS24W700Black(),

@@ -35,4 +35,20 @@ class TextStyles {
       color: ColorsManager.lightGray,
     );
   }
+
+  static textstyleS28W400GreyMulish() {
+    return GoogleFonts.mulish(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      color: ColorsManager.lightGray,
+    );
+  }
+
+  static textstyleS28W400GreyDmSans() {
+    return GoogleFonts.dmSans(
+      fontSize: 16,
+      fontWeight: FontWeight.w700,
+      color: ColorsManager.blueColor,
+    );
+  }
 }

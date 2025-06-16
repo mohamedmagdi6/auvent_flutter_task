@@ -17,7 +17,7 @@ class SplashScreen extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0.w),
         child: Center(
-          child: Image.asset(ImageAssets.logo, width: double.infinity),
+          child: Image.asset(ImageAssets.splashLogo, width: double.infinity),
         ),
       ),
     );
