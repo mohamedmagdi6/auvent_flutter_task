@@ -42,6 +42,7 @@ dependencies:
   firebase_core: 
   dartz: ^0.10.1
   firebase_auth: 
+  flutter_bloc: ^9.1.1
 
 
 dev_dependencies:
