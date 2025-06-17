@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auvent_flutter_task/core/failures/failures.dart';
 import 'package:auvent_flutter_task/core/failures/firebase_error_mapper.dart';
 import 'package:auvent_flutter_task/data/data_sources/auth_remote_data_source/auth_remote_data_source.dart';
@@ -33,6 +35,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         email: email,
         password: password,
       );
+      log('User signed up: ${userCredential.user?.email}');
       return Right(userCredential);
     } on FirebaseAuthException catch (e) {
       return Left(FirebaseErrorMapper.mapFirebaseAuthException(e));
