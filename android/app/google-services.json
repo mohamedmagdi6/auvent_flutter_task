@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "31433233264",
+    "project_id": "auvent-facd1",
+    "storage_bucket": "auvent-facd1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31433233264:android:d4255bd11ef9043c5e75b5",
+        "android_client_info": {
+          "package_name": "com.example.auvent_flutter_task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdFh4gDO8xNXox3gbEgAUFNjfK2Yx4B6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
