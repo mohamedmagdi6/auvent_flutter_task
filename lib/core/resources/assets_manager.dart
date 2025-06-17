@@ -23,4 +23,9 @@ abstract class IconsAssets {
   static const String mustTriesIcon = "$iconsPath/must tries.svg";
   static const String pastOrdersIcon = "$iconsPath/past order.svg";
   static const String superSaverIcon = "$iconsPath/super saver.svg";
+  static const String homeIcon = "$iconsPath/home.svg";
+  static const String categoriesIcon = "$iconsPath/categories.svg";
+  static const String deliverIcon = "$iconsPath/deliver.svg";
+  static const String cartIcon = "$iconsPath/cart.svg";
+  static const String profileIcon = "$iconsPath/profile.svg";
 }
