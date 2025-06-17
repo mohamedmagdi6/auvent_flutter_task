@@ -1,5 +1,5 @@
 import 'package:auvent_flutter_task/core/routing/routes.dart';
-import 'package:auvent_flutter_task/features/auth/login/login_screen.dart';
+import 'package:auvent_flutter_task/features/auth/signin/signin_screen.dart';
 import 'package:auvent_flutter_task/features/auth/signup/signup_screen.dart';
 import 'package:auvent_flutter_task/features/home/ui/home_screen.dart';
 import 'package:auvent_flutter_task/features/onboarding/onboarding_screen.dart';

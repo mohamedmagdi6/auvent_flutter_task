@@ -1,8 +1,4 @@
 import 'package:auvent_flutter_task/core/di/servies_locator.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:auvent_flutter_task/core/helpers/extensions.dart';
 import 'package:auvent_flutter_task/core/helpers/spacing.dart';
 import 'package:auvent_flutter_task/core/resources/assets_manager.dart';
@@ -10,31 +6,32 @@ import 'package:auvent_flutter_task/core/resources/color_manager.dart';
 import 'package:auvent_flutter_task/core/resources/text_style_manager.dart';
 import 'package:auvent_flutter_task/core/routing/routes.dart';
 import 'package:auvent_flutter_task/core/widgets/app_button.dart';
+import 'package:auvent_flutter_task/features/auth/signin/signin_bloc/signin_bloc.dart';
+import 'package:auvent_flutter_task/features/auth/signin/signin_bloc/signin_events.dart';
+import 'package:auvent_flutter_task/features/auth/signin/signin_bloc/signin_states.dart';
 import 'package:auvent_flutter_task/features/auth/widgets/auth_email_text_field.dart';
 import 'package:auvent_flutter_task/features/auth/widgets/auth_password_text_field.dart';
-import 'package:auvent_flutter_task/features/auth/signup/signup_bloc/signup_bloc.dart';
-import 'package:auvent_flutter_task/features/auth/signup/signup_bloc/signup_states.dart';
-import 'package:auvent_flutter_task/features/auth/signup/signup_bloc/signup_events.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SignupScreen extends StatefulWidget {
-  const SignupScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<SignupScreen> createState() => _SignupScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
   bool isObscureText = true;
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController =
-      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt.get<SignUpBloc>(),
+      create: (context) => getIt.get<SignInBloc>(),
       child: Scaffold(
         backgroundColor: ColorsManager.whiteColor,
         body: Padding(
@@ -63,46 +60,30 @@ class _SignupScreenState extends State<SignupScreen> {
                           return null;
                         },
                       ),
-                      verticalSpace(10.h),
-                      AuthPasswordTextField(
-                        isObscureText: isObscureText,
-                        controller: confirmPasswordController,
-                        validator: (value) {
-                          if (value != passwordController.text) {
-                            return 'Passwords do not match';
-                          }
-                          return null;
-                        },
-                      ),
                       verticalSpace(20.h),
-
-                      BlocConsumer<SignUpBloc, SignUpState>(
+                      BlocConsumer<SignInBloc, SignInState>(
                         listener: (context, state) {
-                          if (state is SignUpSuccess) {
+                          if (state is SignInSuccess) {
                             context.pushNamedAndRemoveUntil(Routes.home);
-                          } else if (state is SignUpFailure) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text(state.message)),
-                            );
                           }
                         },
                         builder: (context, state) {
-                          if (state is SignUpLoading) {
-                            return SizedBox(
-                              height: 30.h,
-                              child: CircularProgressIndicator(
-                                color: ColorsManager.primaryColor,
+                          if (state is SignInLoading) {
+                            return const Center(
+                              child: SizedBox(
+                                height: 30,
+                                child: CircularProgressIndicator(),
                               ),
                             );
                           }
                           return AppButton(
-                            text: 'Sign Up',
+                            text: 'Login',
                             onPressed: () {
                               if (formKey.currentState?.validate() ?? false) {
-                                context.read<SignUpBloc>().add(
-                                  SignUpRequested(
-                                    email: emailController.text.trim(),
-                                    password: passwordController.text.trim(),
+                                context.read<SignInBloc>().add(
+                                  SignInRequested(
+                                    email: emailController.text,
+                                    password: passwordController.text,
                                   ),
                                 );
                               }
@@ -111,14 +92,13 @@ class _SignupScreenState extends State<SignupScreen> {
                           );
                         },
                       ),
-
                       verticalSpace(16.h),
                       TextButton(
                         onPressed: () {
-                          context.pushNamedAndRemoveUntil(Routes.logingRoute);
+                          context.pushNamedAndRemoveUntil(Routes.signUpRoute);
                         },
                         child: Text(
-                          'already have an account?',
+                          'create an account',
                           style: TextStyles.textstyleS16W700GreyDmSans(),
                         ),
                       ),
