@@ -15,6 +15,7 @@ class AppTextFormField extends StatelessWidget {
   final Widget? prefixIcon;
   final Color? backgroundColor;
   final FormFieldValidator<String>? validator;
+  final TextEditingController controller;
   const AppTextFormField({
     super.key,
     this.contentPadding,
@@ -28,11 +29,13 @@ class AppTextFormField extends StatelessWidget {
     this.backgroundColor,
     this.prefixIcon,
     this.validator,
+    required this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       decoration: InputDecoration(
         isDense: true,
         contentPadding:

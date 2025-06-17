@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AuthEmailTextField extends StatelessWidget {
-  const AuthEmailTextField({super.key});
+  const AuthEmailTextField({super.key, required this.controller});
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +17,7 @@ class AuthEmailTextField extends StatelessWidget {
           padding: const EdgeInsets.only(left: 8.0),
           child: SvgPicture.asset(IconsAssets.mailIcon),
         ),
+        controller: controller,
       ),
     );
   }
