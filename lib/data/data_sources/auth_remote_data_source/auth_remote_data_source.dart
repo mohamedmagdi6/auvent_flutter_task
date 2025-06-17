@@ -11,5 +11,4 @@ abstract class AuthRemoteDataSource {
     String email,
     String password,
   );
-  Future<void> signOut();
 }
