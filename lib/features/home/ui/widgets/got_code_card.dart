@@ -1,7 +1,9 @@
+import 'package:auvent_flutter_task/core/helpers/spacing.dart';
 import 'package:auvent_flutter_task/core/resources/color_manager.dart';
 import 'package:auvent_flutter_task/core/resources/text_style_manager.dart';
 import 'package:auvent_flutter_task/features/home/ui/widgets/image_of_code_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GotCodeCard extends StatelessWidget {
   const GotCodeCard({super.key});
@@ -28,7 +30,7 @@ class GotCodeCard extends StatelessWidget {
         child: Row(
           children: [
             ImageOfCodeCard(),
-            SizedBox(width: 16),
+            horizontalSpace(16.w),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

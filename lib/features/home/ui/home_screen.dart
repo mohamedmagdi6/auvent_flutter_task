@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                   verticalSpace(16.h),
                   // Code card
                   GotCodeCard(),
-                  const SizedBox(height: 24),
+                  verticalSpace(24.h),
                   // Shortcuts title
                   const Text(
                     'Shortcuts:',
