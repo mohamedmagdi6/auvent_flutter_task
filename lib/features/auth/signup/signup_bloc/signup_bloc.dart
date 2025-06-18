@@ -1,4 +1,4 @@
-import 'package:auvent_flutter_task/domain/use_cases/sign_in_use_case/sign_up_use_case.dart';
+import 'package:auvent_flutter_task/domain/use_cases/sign_up_use_case.dart';
 import 'package:auvent_flutter_task/features/auth/signup/signup_bloc/signup_events.dart';
 import 'package:auvent_flutter_task/features/auth/signup/signup_bloc/signup_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
