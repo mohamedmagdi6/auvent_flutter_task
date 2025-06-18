@@ -13,14 +13,21 @@ class HomeDataModel {
 
   factory HomeDataModel.fromJson(Map<String, dynamic> json) {
     return HomeDataModel(
-      json['name'] as String,
-      json['address'] as String,
-      service: (json['service'] as List)
-          .map((e) => ServiceModel.fromJson(e))
-          .toList(),
-      popularRestaurant: (json['popularRestaurant'] as List)
-          .map((e) => PopularRestaurantModel.fromJson(e))
-          .toList(),
+      (json['name'] as String?) ?? '',
+      (json['address'] as String?) ?? '',
+      service:
+          (json['service'] as List?)
+              ?.map((e) => ServiceModel.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      popularRestaurant:
+          (json['restaurants'] as List?)
+              ?.map(
+                (e) =>
+                    PopularRestaurantModel.fromJson(e as Map<String, dynamic>),
+              )
+              .toList() ??
+          [],
     );
   }
 }
@@ -32,8 +39,8 @@ class ServiceModel {
   ServiceModel({required this.title, required this.discount});
   factory ServiceModel.fromJson(Map<String, dynamic> json) {
     return ServiceModel(
-      title: json['title'] as String,
-      discount: json['discount'] as String,
+      title: (json['title'] as String?) ?? '',
+      discount: (json['discount'] as String?) ?? '',
     );
   }
 }
@@ -45,8 +52,8 @@ class PopularRestaurantModel {
   PopularRestaurantModel({required this.title, required this.time});
   factory PopularRestaurantModel.fromJson(Map<String, dynamic> json) {
     return PopularRestaurantModel(
-      title: json['title'] as String,
-      time: json['time'] as String,
+      title: (json['title'] as String?) ?? '',
+      time: (json['time'] as String?) ?? '',
     );
   }
 }
