@@ -22,10 +22,15 @@ class ServiceItem extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h),
           decoration: BoxDecoration(
-            color: ColorsManager.lighterGray,
+            color: ColorsManager.lighterGray.withAlpha(150),
             borderRadius: BorderRadius.circular(16),
           ),
-          child: Image.asset(imageUrl, width: 32.w),
+          child: Image.asset(
+            imageUrl,
+            fit: BoxFit.fill,
+            height: 40.h,
+            width: 40.w,
+          ),
         ),
         Container(
           padding: EdgeInsets.all(2),
