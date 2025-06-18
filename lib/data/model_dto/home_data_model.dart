@@ -1,8 +1,8 @@
 class HomeDataModel {
   final String name;
   final String address;
-  final ServiceModel service;
-  final PopularRestaurantModel popularRestaurant;
+  final List<ServiceModel> service;
+  final List<PopularRestaurantModel> popularRestaurant;
 
   HomeDataModel(
     this.name,
@@ -10,18 +10,17 @@ class HomeDataModel {
     required this.service,
     required this.popularRestaurant,
   });
+
   factory HomeDataModel.fromJson(Map<String, dynamic> json) {
     return HomeDataModel(
       json['name'] as String,
       json['address'] as String,
-      service: ServiceModel(
-        title: json['service']['title'] as String,
-        discount: json['service']['discount'] as String,
-      ),
-      popularRestaurant: PopularRestaurantModel(
-        title: json['popularRestaurant']['title'] as String,
-        time: json['popularRestaurant']['time'] as String,
-      ),
+      service: (json['service'] as List)
+          .map((e) => ServiceModel.fromJson(e))
+          .toList(),
+      popularRestaurant: (json['popularRestaurant'] as List)
+          .map((e) => PopularRestaurantModel.fromJson(e))
+          .toList(),
     );
   }
 }
