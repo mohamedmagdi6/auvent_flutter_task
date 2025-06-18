@@ -1,7 +1,16 @@
+import 'package:hive/hive.dart';
+
+part 'home_data_model.g.dart';
+
+@HiveType(typeId: 0)
 class HomeDataModel {
+  @HiveField(0)
   final String name;
+  @HiveField(1)
   final String address;
+  @HiveField(2)
   final List<ServiceModel> service;
+  @HiveField(3)
   final List<PopularRestaurantModel> popularRestaurant;
 
   HomeDataModel(
@@ -32,8 +41,11 @@ class HomeDataModel {
   }
 }
 
+@HiveType(typeId: 1)
 class ServiceModel {
+  @HiveField(0)
   final String title;
+  @HiveField(1)
   final String discount;
 
   ServiceModel({required this.title, required this.discount});
@@ -45,8 +57,11 @@ class ServiceModel {
   }
 }
 
+@HiveType(typeId: 2)
 class PopularRestaurantModel {
+  @HiveField(0)
   final String title;
+  @HiveField(1)
   final String time;
 
   PopularRestaurantModel({required this.title, required this.time});

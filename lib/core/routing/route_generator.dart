@@ -14,7 +14,7 @@ class AppRouter {
       case Routes.onboarding:
         return MaterialPageRoute(
           builder: (_) => FirebaseAuth.instance.currentUser != null
-              ? HomeScreen()
+              ? const HomeScreen()
               : const OnboardingScreen(),
         );
       case Routes.splashScreenRoute:
@@ -24,7 +24,7 @@ class AppRouter {
       case Routes.signUpRoute:
         return MaterialPageRoute(builder: (_) => const SignupScreen());
       case Routes.home:
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
 
       default:
         return unDefinedRoute();

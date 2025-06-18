@@ -3,7 +3,7 @@ import 'package:auvent_flutter_task/core/failures/firebase_error_mapper.dart';
 import 'package:auvent_flutter_task/data/data_sources/remote_data_source/home_remote_data_source/home_remote_data_source.dart';
 import 'package:auvent_flutter_task/data/model_dto/home_data_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dartz/dartz.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {

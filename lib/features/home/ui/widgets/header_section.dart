@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HeaderSection extends StatelessWidget {
-  const HeaderSection({super.key});
+  const HeaderSection({super.key, this.name, this.address});
+  final String? name;
+  final String? address;
 
   @override
   Widget build(BuildContext context) {
@@ -39,15 +41,15 @@ class HeaderSection extends StatelessWidget {
                 style: TextStyles.textstyleS12W700BlackDmSans(),
               ),
               Text(
-                'Al Satwa, 81A Street',
+                address ?? 'Unknown Address',
                 style: TextStyles.textstyleS18W700BlackDmSans(),
               ),
-              Text('Hi hepa!', style: TextStyles.textstyleS28W700White()),
+              Text('Hi $name!', style: TextStyles.textstyleS28W700White()),
             ],
           ),
           const CircleAvatar(
             radius: 28,
-            backgroundImage: NetworkImage('https://i.pravatar.cc/150'),
+            backgroundImage: AssetImage('assets/image/magdi.jpg'),
           ),
         ],
       ),

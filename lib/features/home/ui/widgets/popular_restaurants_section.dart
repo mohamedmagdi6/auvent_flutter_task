@@ -1,22 +1,14 @@
 import 'package:auvent_flutter_task/core/helpers/spacing.dart';
 import 'package:auvent_flutter_task/core/resources/assets_manager.dart';
 import 'package:auvent_flutter_task/core/resources/text_style_manager.dart';
+import 'package:auvent_flutter_task/data/model_dto/home_data_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PopularRestaurantsSection extends StatelessWidget {
-  PopularRestaurantsSection({super.key});
+  const PopularRestaurantsSection({super.key, required this.restaurants});
 
-  final List<Map<String, String>> restaurants = [
-    {'name': 'Allo Beirut', 'time': '32 mins', 'image': ImageAssets.burger},
-    {'name': 'Laffah', 'time': '38 mins', 'image': ImageAssets.burger},
-    {
-      'name': 'Falafil Al Rabiah Al kha...',
-      'time': '44 mins',
-      'image': ImageAssets.groceries,
-    },
-    {'name': 'Barbar', 'time': '34 mins', 'image': ImageAssets.health},
-  ];
+  final List<PopularRestaurantModel> restaurants;
 
   @override
   Widget build(BuildContext context) {
@@ -45,16 +37,13 @@ class PopularRestaurantsSection extends StatelessWidget {
                       border: Border.all(color: Colors.grey.shade300),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Image.asset(
-                      restaurant['image']!,
-                      fit: BoxFit.contain,
-                    ),
+                    child: Image.asset(ImageAssets.burger, fit: BoxFit.contain),
                   ),
                   verticalSpace(4.h),
                   SizedBox(
                     width: 70,
                     child: Text(
-                      restaurant['name']!,
+                      restaurant.time,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyles.textstyleS12W700BlackDmSans(),
                       textAlign: TextAlign.center,
@@ -70,7 +59,7 @@ class PopularRestaurantsSection extends StatelessWidget {
                       ),
                       verticalSpace(4.h),
                       Text(
-                        restaurant['time']!,
+                        restaurant.time,
                         style: const TextStyle(fontSize: 12),
                       ),
                     ],

@@ -27,59 +27,70 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         body: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
-            return SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Header section
-                  HeaderSection(),
-                  verticalSpace(8.h),
-                  // Services title
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Services:',
-                          style: TextStyles.textstyleS20W700Black(),
-                        ),
-                        verticalSpace(12.h),
-                        // Services row
-                        ServicesSection(),
-                        verticalSpace(16.h),
-                        // Code card
-                        GotCodeCard(),
-                        verticalSpace(24.h),
-                        // Shortcuts title
-                        const Text(
-                          'Shortcuts:',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        verticalSpace(12.h),
-                        // Shortcuts row
-                        ShortcutsSection(),
-                        verticalSpace(16.h),
-                        CarouselWithIndicator(
-                          carouselImages: [
-                            ImageAssets.bannerImage,
-                            ImageAssets.bannerImage,
-                            ImageAssets.bannerImage,
-                            ImageAssets.bannerImage,
-                            ImageAssets.bannerImage,
-                          ],
-                        ),
-                        verticalSpace(16.h),
-                        PopularRestaurantsSection(),
-                      ],
+            if (state is HomeLoading) {
+              return Center(child: CircularProgressIndicator());
+            } else if (state is HomeLoaded) {
+              return SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Header section
+                    HeaderSection(
+                      name: state.data.name,
+                      address: state.data.address,
                     ),
-                  ),
-                ],
-              ),
-            );
+                    verticalSpace(8.h),
+                    // Services title
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Services:',
+                            style: TextStyles.textstyleS20W700Black(),
+                          ),
+                          verticalSpace(12.h),
+                          // Services row
+                          ServicesSection(services: state.data.service),
+                          verticalSpace(16.h),
+                          // Code card
+                          GotCodeCard(),
+                          verticalSpace(24.h),
+                          // Shortcuts title
+                          const Text(
+                            'Shortcuts:',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          verticalSpace(12.h),
+                          // Shortcuts row
+                          ShortcutsSection(),
+                          verticalSpace(16.h),
+                          CarouselWithIndicator(
+                            carouselImages: [
+                              ImageAssets.bannerImage,
+                              ImageAssets.bannerImage,
+                              ImageAssets.bannerImage,
+                              ImageAssets.bannerImage,
+                              ImageAssets.bannerImage,
+                            ],
+                          ),
+                          verticalSpace(16.h),
+                          PopularRestaurantsSection(
+                            restaurants: state.data.popularRestaurant,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            }
+
+            return Center(child: Text('Error loading data'));
           },
         ),
         bottomNavigationBar: CustomBottomNavBar(),

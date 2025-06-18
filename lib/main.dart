@@ -10,7 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   setupServiceLocator();
-  await HiveService.init();
+  await getIt<HiveService>().init();
 
   runApp(AUVENTApp(appRouter: AppRouter()));
 }

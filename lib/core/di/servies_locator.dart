@@ -1,3 +1,4 @@
+import 'package:auvent_flutter_task/data/data_sources/local_data_source/hive_service.dart';
 import 'package:auvent_flutter_task/data/data_sources/remote_data_source/home_remote_data_source/home_remote_data_source_impl.dart';
 import 'package:auvent_flutter_task/data/repository_impl/auth_repo_impl.dart';
 import 'package:auvent_flutter_task/data/repository_impl/home_repository_impl.dart';
@@ -33,6 +34,8 @@ void setupServiceLocator() {
     HomeRemoteDataSourceImpl(firestore: getIt.get<FirebaseFirestore>()),
   );
 
+  getIt.registerSingleton(HiveService());
+
   // Repository
   getIt.registerSingleton<AuthRepository>(
     AuthRepositoryImpl(
@@ -42,7 +45,10 @@ void setupServiceLocator() {
 
   // home repository
   getIt.registerSingleton<HomeRepositoryImpl>(
-    HomeRepositoryImpl(remoteDataSource: getIt.get<HomeRemoteDataSourceImpl>()),
+    HomeRepositoryImpl(
+      remoteDataSource: getIt<HomeRemoteDataSourceImpl>(),
+      hiveService: getIt(),
+    ),
   );
 
   // UseCases
