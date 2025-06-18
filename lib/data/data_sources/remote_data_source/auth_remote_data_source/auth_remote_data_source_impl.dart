@@ -19,6 +19,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         email: email,
         password: password,
       );
+
       return Right(userCredential);
     } on FirebaseAuthException catch (e) {
       return Left(FirebaseErrorMapper.mapFirebaseAuthException(e));
